@@ -4,10 +4,18 @@ datos requeridos se encuentran en los archivos `tbl0.tsv`, `tbl1.tsv` y
 `tbl2.tsv`. En este laboratorio solo puede utilizar las funciones y 
 librerias de pandas para resolver las preguntas.
 """
+import pandas as pd
+import os
+data = os.path.join(os.path.dirname(__file__), "../files/input/tbl0.tsv")
+#data = r"C:\Users\Olga\Documents\GitHub\2024-2-LAB-02-pandas-Paolabustos0510\files\input\tbl0.tsv"
+tbl_0 =pd.read_csv(data, sep="\t")
 
 
 def pregunta_08():
-    """
+   tbl_0['suma'] = tbl_0['c0'] + tbl_0['c2']
+   return (tbl_0)
+
+"""""
     Agregue una columna llamada `suma` con la suma de `c0` y `c2` al
     data frame que contiene el archivo `tbl0.tsv`.
 

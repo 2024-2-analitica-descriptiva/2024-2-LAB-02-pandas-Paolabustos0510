@@ -4,9 +4,17 @@ datos requeridos se encuentran en los archivos `tbl0.tsv`, `tbl1.tsv` y
 `tbl2.tsv`. En este laboratorio solo puede utilizar las funciones y 
 librerias de pandas para resolver las preguntas.
 """
+import pandas as pd
+import os
+data = os.path.join(os.path.dirname(__file__), "../files/input/tbl1.tsv")
+#data = r"C:\Users\Olga\Documents\GitHub\2024-2-LAB-02-pandas-Paolabustos0510\files\input\tbl0.tsv"
+tbl_1 = pd.read_csv(data, sep="\t")
 
 
 def pregunta_11():
+    tabla = tbl_1.groupby('c0')['c4'].apply(lambda x: ",".join(sorted(x))).reset_index()
+    return (tabla)
+    
     """
     Construya una tabla que contenga `c0` y una lista separada por ',' de
     los valores de la columna `c4` del archivo `tbl1.tsv`.
