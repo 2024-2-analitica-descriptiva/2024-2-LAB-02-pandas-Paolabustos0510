@@ -12,8 +12,8 @@ tbl_0 =pd.read_csv(data, sep="\t")
 
 
 def pregunta_10():
-    result = tbl_0.groupby('c1')['c2'].apply(lambda x: ":".join(map(str,sorted(map(int,x))))).reset_index()
-    return (result)
+    result = tbl_0.groupby('c1')['c2'].apply(lambda x: ":".join(map(str,sorted(map(int,x))))).reset_index().set_index('c1')
+    return result
  
     """
     Construya una tabla que contenga `c1` y una lista separada por ':' de los
